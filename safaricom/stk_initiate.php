@@ -5,8 +5,8 @@ if(isset($_POST['submit'])){
   date_default_timezone_set('Africa/Nairobi');
 
   # access token
-  $consumerKey = 'yyHdQt3VUUqxXbqnlGifwbEHnQqI8QEe'; //Fill with your app Consumer Key
-  $consumerSecret = 'AFk250TXxe3FzuHi'; // Fill with your app Secret
+  $consumerKey = '8gzff2q4GTa791mGP2XVJS7cLQHzqYd9GaB4S6PY1WxQHcUB'; //Fill with your app Consumer Key
+  $consumerSecret = 'Mt2mckfZ3wUMhxxzVIR8wdWr3MEK86B1cXrJIG4p0HYDj2WulnJJ4cQqNCTrkz9b'; // Fill with your app Secret
 
   # define the variales
   # provide the following details, this part is found on your test credentials on the developer account
@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
   */
   
    $PartyA = $_POST['phone']; // This is your phone number, 
-  $AccountReference = 'DeKUT E-Ticket';
+  $AccountReference = '2255';
   $TransactionDesc = 'Test Payment';
   $Amount = $_POST['amount'];
  
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
   $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
   # callback url
-  $CallBackURL = 'https://morning-basin-87523.herokuapp.com/callback_url.php';  
+  $CallBackURL = 'http://localhost/mpesa/callback_url.php';  
 
   $curl = curl_init($access_token_url);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -87,4 +87,3 @@ if(isset($_POST['submit'])){
 
   echo $curl_response;
 };
-
